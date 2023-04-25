@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Varela+Round&display=swap');
+
+:root {
+  --bg-color: #E98074;
+  --header-color: #EAE7DC;
+  --card-color: #EAE7DC;
+  --text-color: #1C1C1E;
+}
+
+body {
+  display: grid;
+  grid-template-rows: min-content min-content;
+  row-gap: 10px;
+  align-content: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+}
+
+header {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  font-family: "Nunito", sans-serif;
+  color: var(--header-color);
+}
+
+#books-container {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: auto;
+  row-gap: 15px;
+}
+
+.book {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  column-gap: 25px;
+  font-family: "Varela Round", serif;
+  font-size: 1.10rem;
+  background-color: var(--card-color);
+  color: var(--text-color);
+  border-radius: 5px;
+  padding: 10px;
+  align-items: center;
+}
