@@ -12,29 +12,40 @@
 <body>
   <header>MY LIBRARY</header>
   <main id="library">
+    <section id="labels">
+      <label for="title">Title</label>
+      <label for="author">Author</label>
+      <label for="favorite">Favorite</label>
+      <label for="done">Done</label>
+    </section>
     <section id="add-book-section">
+      <input type="text" id="title" placeholder="Title"/>
+      <input type="text" id="author" placeholder="Author"/>
+      <input type="checkbox" id="favorite"/>
+      <input type="checkbox" id="done"/>
+      <button type="submit"><img src="images/add-icon.png" alt="Add book"></button>
     </section>
     <section id="books-container">
       <section class="book">
         <div class="title">Intermediate Accounting 1</div>
         <div class="author">Conrado T. Valix</div>
-        <div class="favorite">⭐</div>
-        <div class="read">Done reading</div>
-        <button class="remove">❌</button>
+        <button class="favorite"><img src="images/favorite-icon.png" alt="Favorite"></button>
+        <button class="read"><img src="images/done-icon.png" alt="Done"></button>
+        <button class="remove"><img src="images/delete-icon.png" alt="Delete"></button>
       </section>
       <section class="book">
         <div class="title-label">Transfer and Business Taxation</div>
         <div class="author-label">Enrico D. Tabag</div>
-        <div class="favorite-label">⭐</div>
-        <div class="read-label">Not done</div>
-        <button class="remove">❌</button>
+        <button class="favorite"><img src="images/favorite-icon.png" alt="Favorite"></button>
+        <button class="read"><img src="images/done-icon.png" alt="Done"></button>
+        <button class="remove"><img src="images/delete-icon.png" alt="Delete"></button>
       </section>
       <section class="book">
         <div class="title-label">Advanced Financial Accounting & Reporting: Accounting for Business Combinations</div>
         <div class="author-label">Antonio J. Dayag</div>
-        <div class="favorite-label">⭐</div>
-        <div class="read-label">Not done</div>
-        <button class="remove">❌</button>
+        <button class="favorite"><img src="images/not-favorite-icon.png" alt="Not favorite"></button>
+        <button class="read"><img src="images/not-done-icon.png" alt="Done"></button>
+        <button class="remove"><img src="images/delete-icon.png" alt="Delete"></button>
       </section>
     </section>
   </main>

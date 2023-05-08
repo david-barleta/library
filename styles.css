@@ -14,8 +14,8 @@
 
 body {
   display: grid;
-  grid-template-rows: min-content min-content;
-  row-gap: 10px;
+  grid-template-rows: auto auto;
+  row-gap: 15px;
   align-content: center;
   justify-content: center;
   background-color: var(--bg-color);
@@ -29,16 +29,29 @@ header {
   color: var(--header-color);
 }
 
-#books-container {
+#library {
   display: grid;
-  grid-auto-flow: row;
-  grid-auto-rows: auto;
+  grid-template-rows: auto auto auto;
   row-gap: 15px;
 }
 
-.book {
+#labels {
   display: grid;
-  grid-template-columns: minmax(auto, 400px) 200px auto 125px auto;
+  grid-template-columns: minmax(auto, 400px) 200px 100px 75px 50px;
+  column-gap: 25px;
+  font-size: 1.5rem;
+  font-family: "Varela Round", sans-serif;
+  color: var(--header-color);
+  padding: 0 25px;
+}
+
+#labels label:not(:first-child) {
+  text-align: center;
+}
+
+#add-book-section {
+  display: grid;
+  grid-template-columns: 400px 200px 100px 75px 50px;
   column-gap: 25px;
   font-family: "Varela Round", serif;
   font-size: 1.10rem;
@@ -50,13 +63,55 @@ header {
   align-items: center;
 }
 
-.book div:not(:first-child) {
-  display: grid;
-  justify-content: center;
+#add-book-section input {
+  display: flex;
+  border: none;
+  background-color: var(--card-color);
 }
 
-.remove {
+#add-book-section #author {
+  text-align: center;
+}
+
+button {
   border: none;
-  background-color: rgb(255, 255, 255, 0);
+  max-width: 40px;
+  max-height: 40px;
+}
+
+button .remove {
+  grid-column-start: 5;
+  grid-row: 1/3;
+}
+
+#books-container {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: auto;
+  row-gap: 15px;
+}
+
+.book {
+  display: grid;
+  grid-template-columns: minmax(auto, 400px) 200px 100px 75px 50px;
+  column-gap: 25px;
+  font-family: "Varela Round", serif;
+  font-size: 1.10rem;
+  background-color: var(--card-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  border-left: 10px solid var(--accent-color);
+  padding: 15px;
+  align-items: center;
+}
+
+.book div:not(:first-child), button {
+  display: flex;
+  justify-self: center;
+}
+
+img {
   cursor: pointer;
+  max-width: auto;
+  max-height: auto;
 }
