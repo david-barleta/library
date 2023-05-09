@@ -1,4 +1,5 @@
 const favoriteButtons = document.querySelectorAll(".favorite")
+const doneButtons = document.querySelectorAll(".done")
 let myLibrary = [];
 
 function Book(title, author, pages, done) {
@@ -24,6 +25,21 @@ function changeFavoriteStatus(button) {
   }
 }
 
+function changeDoneStatus(button) {
+  const icon = button.target;
+  if (icon.alt == "Done") {
+    icon.src = "images/not-done-icon.png";
+    icon.alt = "Not done";
+  } else {
+    icon.src = "images/done-icon.png";
+    icon.alt = "Done";
+  }
+}
+
 favoriteButtons.forEach(button => {
   button.addEventListener('click', changeFavoriteStatus);
+})
+
+doneButtons.forEach(button => {
+  button.addEventListener('click', changeDoneStatus);
 })
