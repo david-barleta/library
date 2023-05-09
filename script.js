@@ -1,5 +1,6 @@
-const favoriteButtons = document.querySelectorAll(".favorite")
-const doneButtons = document.querySelectorAll(".done")
+const favoriteButtons = document.querySelectorAll(".favorite");
+const doneButtons = document.querySelectorAll(".done");
+const removeButtons = document.querySelectorAll(".remove");
 let myLibrary = [];
 
 function Book(title, author, pages, done) {
@@ -36,10 +37,19 @@ function changeDoneStatus(button) {
   }
 }
 
+function removeBook(button) {
+  const book = button.target.parentElement.parentElement;
+  book.remove();
+}
+
 favoriteButtons.forEach(button => {
   button.addEventListener('click', changeFavoriteStatus);
 })
 
 doneButtons.forEach(button => {
   button.addEventListener('click', changeDoneStatus);
+})
+
+removeButtons.forEach(button => {
+  button.addEventListener('click', removeBook);
 })
